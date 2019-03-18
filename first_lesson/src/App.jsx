@@ -6,12 +6,11 @@ import Form from './Form/Form';
 class App extends Component {
 
   render() {
-    
+
     const{value, plus,minus,reset}=this.props; 
 
     return (
-      <div className="counter">  
-
+      <div className="counter">   
         <p>{value}</p>
         <button onClick={plus}>+ 1</button>
         <button onClick={reset}>reset</button>
@@ -33,6 +32,7 @@ const mapDispatchToProps = (dispatch)=> ({
   reset :() => dispatch( actions.reset()), 
 })
  
- 
+
+
 
 export default connect(mapStateToProps,mapDispatchToProps)(App);
