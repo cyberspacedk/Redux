@@ -1,0 +1,20 @@
+  .gallery{
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    flex-direction: column;
+  }
+  .galleryItem{
+    width: 22%;
+    height: 150px;
+    display: block;
+    margin: 5px;
+  }
+  .gallery_container{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center; 
+    justify-content: center;
+  }

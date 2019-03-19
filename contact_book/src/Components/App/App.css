@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: rgb(214, 214, 214);
+}
+.contact-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.users-cards-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 90vh; 
+  margin-bottom: 10px;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding: 30px;
+}
+.create-contact-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.432);
+}
+
+.create-contact-form {
+  display: flex;
+  max-width: 620px;
+  flex-wrap: wrap; 
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.left-section { 
+  flex-basis: 60%;
+}
+.left-section > div {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px ;
+}
+.left-section  span{
+  display: block;  
+}
+.left-section  input{
+  display: block; 
+  border: none;
+  display: block;
+  padding: 5px;
+  border-bottom: 2px dashed #9a9a9a;
+}
+.right-section {
+  flex-basis: 40%;
+}
+.submit-button {
+  margin: 20px auto;
+}
+ 
+.input-section input { 
+  border: none;
+  border-bottom: 1px solid #000;
+}
+
+
+
+.avatar {
+  display: block;
+  width: 200px;
+  height: 200px;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+.add-new-contact {
+  display: block;
+  width: 200px;
+  padding: 5px;
+  background-color: rgb(97, 97, 97);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+.user-card-item {
+  background-color: rgb(238, 238, 238);
+  padding: 20px 10px;
+  border-radius: 3px;
+  -webkit-flex-basis: 25%;
+  flex-basis: 30%;
+  box-shadow: 4px 5px 9px #4e4d4d;
+  margin: 5px;
+}
+.user-card-item p {
+  margin: 5px 0;
+  border-bottom: 1px dashed rgb(214, 210, 210);
+
+}
+.user-card-item span{
+  font-weight: 700;
+  font-style: italic;
+  font-family: serif;
+  margin-right: 20px;
+}
