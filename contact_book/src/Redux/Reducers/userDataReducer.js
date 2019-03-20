@@ -14,6 +14,7 @@ const userDataReducer = (state=initialState, action)=>{
     case 'PHONE': return {...state, [action.name]:action.value};
     case 'EMAIL': return {...state, [action.name]:action.value};
     case 'DATE': return {...state, [action.name]:action.value};
+    case 'EDITMODE': return action.data;
     case 'CLEAR': return initialState;
     default: return state;
   }

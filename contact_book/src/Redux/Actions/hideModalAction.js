@@ -1,4 +1,4 @@
-const showModalAction = () => ({
+const hideModalAction = () => ({
   type: "HIDEMODAL", 
 });
-export default showModalAction;
+export default hideModalAction;

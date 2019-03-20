@@ -1,6 +1,7 @@
-const userCardsAction = (userData)=> ({
+const userCardsAction = (userData,edit)=> ({
   type: 'CREATE',
-  data: {...userData, id: Date.now},
+  data: {...userData},
+  edit: edit,
 });
 
 export default userCardsAction;

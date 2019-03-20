@@ -37,7 +37,7 @@ class App extends Component {
 
   render() {
 
-  const {modal, showModal} = this.props;
+  const {modal, showModal, hideModal} = this.props;
     return (
       <div className="contact-container"> 
         
@@ -60,7 +60,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  showModal : () => dispatch( showModalAction() ),
+  showModal : () => dispatch( showModalAction() ), 
   getFromLocalStorageAction: () => dispatch( getFromLocalStorageAction() ),
 
 })

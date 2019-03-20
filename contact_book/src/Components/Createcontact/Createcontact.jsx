@@ -11,7 +11,7 @@ class Createcontact extends Component {
 
   render() {
   const {
-    showModal, 
+    hideModal, 
     userDataActionFname, 
     userDataActionLname,
     userDataActionPhone,
@@ -20,15 +20,20 @@ class Createcontact extends Component {
     userDataActionClear,
     userCardsAction,
     userData,
+    edit,
+    editModeCloseAction,
   } = this.props;
 
     return (
       <div className="create-contact-wrapper">
+
+
         <form className="create-contact-form"
             onSubmit={(evt)=> {
-                              showModal();
-                              userCardsAction(evt,userData);
+                              hideModal();
+                              userCardsAction(evt,userData,edit);
                               userDataActionClear();
+                              editModeCloseAction();
                             }}>
 
           <div className="left-section">
@@ -54,9 +59,11 @@ class Createcontact extends Component {
             <img src={userpic} alt="avatar" className="avatar" />
           </div>
           
-          <button className="submit-button">
-            Save Contact</button>
+          <button className="submit-button"> Save Contact</button>
+          <div className="close-button" onClick={hideModal}>+</div>
+         
         </form>
+        <div className="backdrop" onClick={hideModal}></div>
       </div>
     );
   }
@@ -65,19 +72,21 @@ class Createcontact extends Component {
 const mapStateToProps = state => ({
   modal: state.modal,
   userData: state.userData,
+  edit: state.editMode,
 });
 
-const mapDispatchToProps = dispatch => ({
-  showModal: () => dispatch(hideModalAction()),
+const mapDispatchToProps = (dispatch) => ({
+  hideModal: () => dispatch(hideModalAction()),
   userDataActionFname: (evt)=> dispatch(inp.userDataActionFname(evt)),
   userDataActionLname: (evt)=> dispatch(inp.userDataActionLname(evt)),
   userDataActionPhone: (evt)=> dispatch(inp.userDataActionPhone(evt)),
   userDataActionEmail: (evt)=> dispatch(inp.userDataActionEmail(evt)),
   userDataActionDate: (evt)=> dispatch(inp.userDataActionDate(evt)),
   userDataActionClear: ()=>dispatch(inp.userDataActionClear()),
-  userCardsAction: (evt,data) => {
+  userCardsAction: (evt,data,edit) => {
                       evt.preventDefault();
-                      dispatch( userCardsAction(data) )}
+                      dispatch( userCardsAction(data,edit) )},
+  editModeCloseAction : ()=>dispatch(inp.editModeCloseAction()),
 
 });
  

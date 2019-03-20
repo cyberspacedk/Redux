@@ -31,15 +31,12 @@ export const userDataActionClear = ()=> ({
   type: 'CLEAR',
 })
 
+export const editModeAction = (evt, arr)=>({
+  type: "EDITMODE",
+  data: arr.find(elem=>  elem.id == evt.target.dataset.edit), 
+})
 
-
-
-
-
-
-
- 
- 
- 
- 
- 
+export const editModeCloseAction = ()=>({
+  type: "CLOSEEDITMODE",
+})
+  

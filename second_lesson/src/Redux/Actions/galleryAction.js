@@ -16,6 +16,6 @@ const getImg = () => axios.get(`${END_POINT}${API_KEY}&category=food&order=popul
 // вызовем асинхронную функцию в которой передадим данные в ЭКШН
 export const asyncGalleryAction = () => dispatch => {
     getImg()
-      .then(data=>  dispatch( galleryAction(data.data.hits) ))
+      .then( data=>  dispatch( galleryAction(data.data.hits) ))
 }
  
