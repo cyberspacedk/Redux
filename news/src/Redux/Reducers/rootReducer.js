@@ -1,9 +1,11 @@
-import {combineReducers } from 'redux'; 
-import testInput from './testReducer';
+import {combineReducers } from 'redux';  
+import newsReducer from './newsReducer'
+import searchReducer from './searchReducer';
 
 
 const rootReducer = combineReducers ({  
-    testValue: testInput,
+    news: newsReducer,
+    filter: searchReducer
 })
 
 export default rootReducer; 

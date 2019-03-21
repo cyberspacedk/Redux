@@ -1,1 +1,42 @@
-  
+p {
+  text-align: center;
+  padding: 5px;
+  background-color: #ccc;
+  width: 80%;
+  margin: 10px auto;
+}
+.panel {
+  margin: 10px auto;
+  width: 80%;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.search {
+  display: block;
+  padding: 10px;
+  width: 80%;
+  font-size: 1.5rem;
+}
+.goback {
+  width: 15%;
+  cursor: pointer;
+  display: block;
+  background-color: green;
+  /* text-align: center; */
+  text-decoration: none;
+  text-transform: uppercase;
+  /* padding-top: 13px; */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 2px 2px 3px #000;
+  font-weight: 600;
+  transition: .3s;
+
+}
+.goback:hover {
+  text-shadow: none;
+  transition: .3s;
+}

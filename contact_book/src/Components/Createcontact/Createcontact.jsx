@@ -83,9 +83,11 @@ const mapDispatchToProps = (dispatch) => ({
   userDataActionEmail: (evt)=> dispatch(inp.userDataActionEmail(evt)),
   userDataActionDate: (evt)=> dispatch(inp.userDataActionDate(evt)),
   userDataActionClear: ()=>dispatch(inp.userDataActionClear()),
+  
   userCardsAction: (evt,data,edit) => {
                       evt.preventDefault();
                       dispatch( userCardsAction(data,edit) )},
+
   editModeCloseAction : ()=>dispatch(inp.editModeCloseAction()),
 
 });

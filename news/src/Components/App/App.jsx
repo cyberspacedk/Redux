@@ -1,24 +1,30 @@
 import React, { Component } from 'react'; 
-import {connect} from 'react-redux';
-import {testAction} from '../../Redux/Actions/testAction'
-
+import {connect} from 'react-redux'; 
+import {Route} from 'react-router-dom';
 import './App.css';
+import getNews from '../../Redux/Actions/newsAction'
+import NewsItem from '../NewsItem/NewsItem'
+import Loader from 'react-loader-spinner'
 
  
 
 class App extends Component {
+
+
+
+
+  componentDidMount(){
+
+    this.props.getNews();
+    
+  }
   render() {
 
-  const {testInputValue, testInputChange} = this.props;
+  const {news} = this.props;
+  console.log(news);
     return (
       <div>
-        <h2>REACT REDUX STARTER KIT</h2>
-        <p>Test : {testInputValue}</p>
-        <input type="text" 
-              name="test"  
-              value={testInputValue}
-              onChange={testInputChange}
-              />
+        {news.length ?  <Route path="/" component={NewsItem}/>  : <Loader />}  
       </div>
 
     );
@@ -26,12 +32,12 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  testInputValue : state.testValue, 
+  news : state.news, 
 
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  testInputChange : (evt)=> dispatch( testAction(evt) )
+  getNews : ( )=> dispatch( getNews() )
 })
 
 export default connect(mapStateToProps,mapDispatchToProps)(App); 
