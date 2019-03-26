@@ -1,6 +1,5 @@
 import axios from 'axios';
-
-
+ 
 
 const news = (data) => ({
   type : "GETALLNEWS",
