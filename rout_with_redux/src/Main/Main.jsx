@@ -10,15 +10,9 @@ const Main = ({news}) => {
   return (
     <Switch>
       <Route exact path='/' component={All}/>
-      
-      {/* <Route   path='/:id'  render={(props)=> {
-        const articleId = props.match.params.id; 
-        const article = news.find(elem=> elem.publishedAt === articleId); 
-        return <SinglePage data={article} {...props}/> 
-      }} /> */}
-
-      <Route  path='/:id' component={SinglePage} />
-
+      <Route exact path='' component={All}/>
+      {/* <Route path="/:id" render={ ((props) => <SinglePage {...props}/>)}/> */}
+      <Route  path='/:id' component={SinglePage} /> 
     </Switch>
   )
 }

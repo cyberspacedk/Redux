@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 
 const SinglePage = ({news,match}) => {
 
-    // find the same article throught params id written in NavLink
+// find the same article throught params id written in NavLink
 const data = news.find(el=> el.publishedAt === match.params.id)
 
     return (
